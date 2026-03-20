@@ -1,9 +1,15 @@
-FROM php:8.2-apache
+FROM ubuntu:22.04
 
-WORKDIR /var/www/html
+ENV DEBIAN_FRONTEND=noninteractive
 
-COPY . /var/www/html/
+RUN apt-get update && \
+    apt-get install -y apache2 php libapache2-mod-php unzip curl && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN a2enmod rewrite
 
+WORKDIR /var/www/html
+
 EXPOSE 80
+
+CMD ["apache2ctl", "-D", "FOREGROUND"]
