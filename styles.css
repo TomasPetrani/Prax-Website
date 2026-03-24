@@ -51,7 +51,7 @@ nav.navbar {
     font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: rgba(255,255,255,0.55) !important;
+    color: rgba(255, 255, 255, 0.55) !important;
     padding: 5px 12px !important;
     border-radius: 5px;
     transition: all 0.2s;
@@ -59,11 +59,16 @@ nav.navbar {
 
 .navbar-nav .nav-link:hover {
     color: #fff !important;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
 }
 
-.navbar-toggler { border-color: rgba(255,255,255,0.2) !important; }
-.navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.6)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important; }
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.6)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
 
 main.site-main {
     width: 92%;
@@ -102,13 +107,29 @@ main.site-main {
     border-bottom: 1px solid var(--border);
 }
 
-.contact-item:last-child { border-bottom: none; }
+.contact-item:last-child {
+    border-bottom: none;
+}
 
 
-.contact-info strong { display: block; font-size: 14px; }
-.contact-info span { display: block; font-size: 13px; color: var(--muted); }
-.contact-info a { color: var(--accent); }
-.contact-info a:hover { text-decoration: underline; }
+.contact-info strong {
+    display: block;
+    font-size: 14px;
+}
+
+.contact-info span {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.contact-info a {
+    color: var(--accent);
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
 
 footer.site-footer {
     background: var(--navy);
@@ -125,18 +146,23 @@ footer.site-footer {
 .footer-inner p {
     font-family: var(--mono);
     font-size: 11px;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255, 255, 255, 0.35);
 }
 
 @media (max-width: 768px) {
-    .card-block { padding: 20px 18px; }
-    main.site-main { margin: 28px auto; }
+    .card-block {
+        padding: 20px 18px;
+    }
+
+    main.site-main {
+        margin: 28px auto;
+    }
 }
 
 .page-header {
     background: var(--navy);
-    border-top: 1px solid rgba(255,255,255,0.15);
-    padding: 28px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 20px 0;
 }
 
 .header-inner {
@@ -152,11 +178,10 @@ footer.site-footer {
 }
 
 .project-grid {
-    width: 92%;
-    max-width: 1100px;
-    margin: 40px auto;
+    max-width: 1000px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
@@ -169,6 +194,8 @@ footer.site-footer {
 
 .project-card img {
     width: 100%;
+    height: 350px;
+    object-fit: cover;
     display: block;
     transition: opacity 0.2s;
 }
@@ -193,5 +220,57 @@ footer.site-footer {
 }
 
 @media (max-width: 768px) {
-    .project-grid { grid-template-columns: 1fr; }
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pub-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    display: flex;
+    gap: 28px;
+}
+
+.pub-year {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    padding-top: 3px;
+    flex-shrink: 0;
+    width: 40px;
+}
+
+.pub-title {
+    font-size: 17px;
+    font-weight: 500;
+    color: #0f172a;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.pub-authors {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.pub-venue {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    font-style: italic;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--accent);
+}
+
+.project-link:hover {
+    text-decoration: underline;
 }
